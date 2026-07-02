@@ -5,7 +5,7 @@ Feature: User Login Functionality
   Background:
     Given the user is on the login page
 
-  @smoke @positive
+  @smoke @positive @signin
   Scenario: Successful login with valid credentials
     When User enters username "Sambu9" password "Sambu@123"
     And clicks the login button
@@ -29,7 +29,7 @@ Feature: User Login Functionality
 
 
 
-@regression
+@regression @signout
 Scenario: Succesful user Logout 
   When the user is logged in with valid username "Sambu9" and valid password "Sambu@123"
   And clicks the login button 

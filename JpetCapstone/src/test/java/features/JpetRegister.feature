@@ -1,5 +1,6 @@
 Feature: User Registration
  
+ @register
   Scenario Outline: Register new user with valid details
  
     Given User is on JPetStore Registration page

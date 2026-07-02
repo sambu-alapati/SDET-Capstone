@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -359,14 +360,96 @@ public void Clicks_the_search_button() {
 @Then("User Should able to see data releated to it")
 public void user_should_able_to_see_data_releated_to_it() {
 	
-	  String pageText = driver.findElement(By.tagName("body")).getText();
+	 String pageText = driver.findElement(By.tagName("body")).getText();
 	    
-	    String expectedText = "AV-CB-01";
 	    
-	    Assert.assertTrue("BUG DETECTED: The page text did not contain the expected product ID: " + expectedText, 
+	    String expectedText = "Amazon Parrot"; 
+	    
+	    Assert.assertTrue("BUG DETECTED: The page text did not contain the expected text: " + expectedText, 
 	            pageText.contains(expectedText));
     
 }
+
+
+
+
+
+
+//JpetHome feature for Account management scenario 
+
+@When("user clicks on the account icon and goes to my Account")
+public void user_clicks_on_the_account_icon_and_goes_to_my_account() {
+    jhp.accountIcon();
+    jhp.myAccount();
+}
+
+@When("user updates the password {string} and confirmpassword {string}")
+public void user_updates_the_password_and_confirmpassword(String pass, String confirmpass) {
+	
+	jhp.password(pass);
+	jhp.confirmPassword(confirmpass);
+    jhp.saveAccountBtn();
+}
+
+@Then("user should see the message {string}")
+public void user_should_see_the_message(String verificationtext) {
+	
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    
+    // Locate the <p> element inside the alert container using its class name
+    By alertParagraphLocator = By.xpath("//div[contains(@class, 'alert-info')]/p");
+    
+    // Wait until the element is fully visible on the screen
+    WebElement messageElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertParagraphLocator));
+    
+    // Extract and clean the actual text from the webpage
+    String actualText = messageElement.getText().trim();
+    
+    // Verify it matches "Your account has been updated." 
+    Assert.assertEquals(actualText, verificationtext);
+	
+   
+}
+
+
+
+
+
+
+
+
+
+
+@When("user clicks on the Bird image and clicks return to main menu")
+public void user_clicks_on_the_bird_image_and_clicks_return_to_main_menu() {
+    jhp.birdimage();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks on the Fish image and clicks return to main menu")
+public void user_clicks_on_the_fish_image_and_clicks_return_to_main_menu() {
+    jhp.fishimage();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks on the Dog image and clicks return to main menu")
+public void user_clicks_on_the_dog_image_and_clicks_return_to_main_menu() {
+    jhp.dogimage();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks on the Reptile image and clicks return to main menu")
+public void user_clicks_on_the_reptile_image_and_clicks_return_to_main_menu() {
+    jhp.reptileimage();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks on the Cat image and clicks return to main menu")
+public void user_clicks_on_the_cat_image_and_clicks_return_to_main_menu() {
+    jhp.catimage();
+    jhp.returntomainmenu();
+}
+
 
 
 
