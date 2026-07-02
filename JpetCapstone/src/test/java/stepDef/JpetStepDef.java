@@ -13,17 +13,226 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import junit.framework.Assert;
+import pages.JpetHomePage;
 import pages.JpetLoginPage;
+import pages.JpetRegisterPage;
 
 public class JpetStepDef {
 	
 	WebDriver driver;
 	JpetLoginPage jlp;
+    JpetHomePage jhp;
+    JpetRegisterPage registerPage;
+    
+    
+    
+    
+    //JpetRegister feature for scenario Register new user with valid details
+    
+    @Given("User is on JPetStore Registration page")
+    public void user_is_on_jpetstore_registration_page() {
+        Hooks.driver.get("https://jpetstore.aspectran.com/");
+        registerPage = new JpetRegisterPage(Hooks.driver);
+        registerPage.clickSignUp();
+    }
 
+    @When("User enters User ID {string}")
+    public void user_enters_user_id(String userid) {
+        registerPage.enterUserId(userid);
+    }
+
+    @And("User enters Password {string}")
+    public void user_enters_password(String password) {
+        registerPage.enterPassword(password);
+    }
+
+    @And("User enters Confirm Password {string}")
+    public void user_enters_confirm_password(String confirmPassword) {
+        registerPage.enterConfirmPassword(confirmPassword);
+    }
+
+    @And("User enters First Name {string}")
+    public void user_enters_first_name(String firstName) {
+        registerPage.enterFirstName(firstName);
+    }
+
+    @And("User enters Last Name {string}")
+    public void user_enters_last_name(String lastName) {
+        registerPage.enterLastName(lastName);
+    }
+
+    @And("User enters Email {string}")
+    public void user_enters_email(String email) {
+        registerPage.enterEmail(email);
+    }
+
+    @And("User enters Phone {string}")
+    public void user_enters_phone(String phone) {
+        registerPage.enterPhone(phone);
+    }
+
+    @And("User enters Address1 {string}")
+    public void user_enters_address1(String address1) {
+        registerPage.enterAddress1(address1);
+    }
+
+    @And("User enters Address2 {string}")
+    public void user_enters_address2(String address2) {
+        registerPage.enterAddress2(address2);
+    }
+
+    @And("User enters City {string}")
+    public void user_enters_city(String city) {
+        registerPage.enterCity(city);
+    }
+
+    @And("User enters State {string}")
+    public void user_enters_state(String state) {
+        registerPage.enterState(state);
+    }
+
+    @And("User enters Zip {string}")
+    public void user_enters_zip(String zip) {
+        registerPage.enterZip(zip);
+    }
+
+    @And("User enters Country {string}")
+    public void user_enters_country(String country) {
+        registerPage.enterCountry(country);
+    }
+
+    @And("User selects Language Preference {string}")
+    public void user_selects_language_preference(String language) {
+        registerPage.selectLanguage(language);
+    }
+
+    @And("User selects Favourite Category {string}")
+    public void user_selects_favourite_category(String category) {
+        registerPage.selectCategory(category);
+    }
+
+    @And("User clicks Save Account Information button")
+    public void user_clicks_save_account_information_button() {
+        registerPage.clickSaveAccountInformation();
+    }
+
+    @Then("User account should be created successfully")
+    public void user_account_should_be_created_successfully() {
+        String visibleText = Hooks.driver.findElement(By.tagName("body")).getText();
+        Assert.assertTrue(
+                "Registration failed",
+                Hooks.driver.getCurrentUrl().contains("signin") || visibleText.contains("Sign In")
+        );
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //JpetRegister feature for scenario Verify mandatory field error messages
+    
+    
+    
+    // =========================================================================
+    // CRITICAL SHIELD: Shared explicit wait method to stop StaleElement Exceptions
+    // =========================================================================
+    private void verifyErrorMessageOnScreen(String msg) {
+        // Sets up a 5-second explicit wait to allow layout shifts to settle
+        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(5));
+        
+        // Relocates the body element dynamically on every poll loop to avoid going stale
+        boolean isTextPresent = wait.until(
+            ExpectedConditions.textToBePresentInElementLocated(By.tagName("body"), msg.trim())
+        );
+        
+        Assert.assertTrue("Validation message absent! Expected text: [" + msg + "]", isTextPresent);
+    }
+
+    @Then("User ID error message should be displayed as {string}")
+    public void user_id_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("Password error message should be displayed as {string}")
+    public void password_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("First Name error message should be displayed as {string}")
+    public void first_name_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("Last Name error message should be displayed as {string}")
+    public void last_name_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("Email error message should be displayed as {string}")
+    public void email_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("Phone error message should be displayed as {string}")
+    public void phone_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("Address1 error message should be displayed as {string}")
+    public void address1_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("City error message should be displayed as {string}")
+    public void city_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("State error message should be displayed as {string}")
+    public void state_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("Zip error message should be displayed as {string}")
+    public void zip_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+
+    @Then("Country error message should be displayed as {string}")
+    public void country_error_message_should_be_displayed_as(String msg) {
+        verifyErrorMessageOnScreen(msg);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+	
+	
+//JpetLoginAndLogout feature scenario for valid creds 	
 @Given("the user is on the login page")
 public void the_user_is_on_the_login_page() {
     driver=Hooks.driver;
 	jlp=new JpetLoginPage(driver);
+	jhp=new JpetHomePage(driver);
 	
 	driver.get("https://jpetstore.aspectran.com/");
 	jlp.SignInlink();
@@ -75,6 +284,7 @@ public void user_should_be_logged_in_and_see_greeting_for_user(String username) 
 
 
 
+//JpetLoginandLogout feature scenario for invalid login creds handling
 @When("the user enters {string} and {string}")
 public void the_user_enters_and(String username, String password) {
 	 jlp.username(username);
@@ -102,6 +312,9 @@ public void they_should_see_an_error_message(String errormsg) {
 
 
 
+
+//Jpet LoginAndLogout feature for scenario logout
+
 @When("the user is logged in with valid username {string} and valid password {string}")
 public void the_user_is_logged_in_with_valid_username_and_valid_password(String username, String password) {
      jlp.username(username);
@@ -121,6 +334,39 @@ public void user_should_successfully_able_to_logout() {
    System.out.println("User Successfully Logged Out");
 }
 
+
+
+
+
+
+
+
+
+
+//JpetHome feature for scenario for user search bar functionality 
+
+
+@When("User enter {string} bird in searchbar")
+public void user_enter_bird_in_searchbar(String text) {
+    jhp.searchbar(text);
+}
+
+@And("Clicks the search button")
+public void Clicks_the_search_button() {
+	jhp.searchBtn();
+}
+
+@Then("User Should able to see data releated to it")
+public void user_should_able_to_see_data_releated_to_it() {
+	
+	  String pageText = driver.findElement(By.tagName("body")).getText();
+	    
+	    String expectedText = "AV-CB-01";
+	    
+	    Assert.assertTrue("BUG DETECTED: The page text did not contain the expected product ID: " + expectedText, 
+	            pageText.contains(expectedText));
+    
+}
 
 
 

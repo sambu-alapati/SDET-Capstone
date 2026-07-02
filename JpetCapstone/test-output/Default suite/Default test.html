@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 01 16:49:49 IST 2026</td>
+<td>Started on:</td><td>Thu Jul 02 13:04:00 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>57 seconds (57296 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14436 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,64 +76,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runner.JpetRunner.runScenario()'><b>runScenario</b><br>Test class: runner.JpetRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Failed login with invalid or missing credentials", "User Login Functionality"</td>
-<td><div><pre>junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:55)
+<td title='runner.JpetRunner.runScenario()'><b>runScenario</b><br>Test class: runner.JpetRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User Searchbar Functionality", "Home Page Functionalities"</td>
+<td><div><pre>junit.framework.AssertionFailedError: BUG DETECTED: The page text did not contain the expected product ID: AV-CB-01
+	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.assertTrue(Assert.java:22)
-	at junit.framework.Assert.assertTrue(Assert.java:31)
-	at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:95)
-	at ✽.they should see an error message &quot;Enter password&quot;(file:///C:/Users/SA20696539/eclipse-workspace/JpetCapstone/src/test/java/features/JpetLogin.feature:19)
-</pre></div><a href='#' onClick='toggleBox("stack-trace3768050", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace3768050'><pre>junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:55)
+	at stepDef.JpetStepDef.user_should_able_to_see_data_releated_to_it(JpetStepDef.java:366)
+	at ✽.User Should able to see data releated to it(file:///C:/Users/SA20696539/git/SDET-Capstone/JpetCapstone/src/test/java/features/JpetHome.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace112200409", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace112200409'><pre>junit.framework.AssertionFailedError: BUG DETECTED: The page text did not contain the expected product ID: AV-CB-01
+	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.assertTrue(Assert.java:22)
-	at junit.framework.Assert.assertTrue(Assert.java:31)
-	at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:95)
-	at ✽.they should see an error message &quot;Enter password&quot;(file:///C:/Users/SA20696539/eclipse-workspace/JpetCapstone/src/test/java/features/JpetLogin.feature:19)
+	at stepDef.JpetStepDef.user_should_able_to_see_data_releated_to_it(JpetStepDef.java:366)
+	at ✽.User Should able to see data releated to it(file:///C:/Users/SA20696539/git/SDET-Capstone/JpetCapstone/src/test/java/features/JpetHome.feature:12)
 </pre></div></td>
-<td>11</td>
-<td>runner.JpetRunner@45b4c3a9</td></tr>
-<tr>
-<td title='runner.JpetRunner.runScenario()'><b>runScenario</b><br>Test class: runner.JpetRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Failed login with invalid or missing credentials", "User Login Functionality"</td>
-<td><div><pre>junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:55)
-	at junit.framework.Assert.assertTrue(Assert.java:22)
-	at junit.framework.Assert.assertTrue(Assert.java:31)
-	at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:95)
-	at ✽.they should see an error message &quot;Enter username&quot;(file:///C:/Users/SA20696539/eclipse-workspace/JpetCapstone/src/test/java/features/JpetLogin.feature:19)
-</pre></div><a href='#' onClick='toggleBox("stack-trace154449199", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace154449199'><pre>junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:55)
-	at junit.framework.Assert.assertTrue(Assert.java:22)
-	at junit.framework.Assert.assertTrue(Assert.java:31)
-	at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:95)
-	at ✽.they should see an error message &quot;Enter username&quot;(file:///C:/Users/SA20696539/eclipse-workspace/JpetCapstone/src/test/java/features/JpetLogin.feature:19)
-</pre></div></td>
-<td>11</td>
-<td>runner.JpetRunner@45b4c3a9</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='runner.JpetRunner.runScenario()'><b>runScenario</b><br>Test class: runner.JpetRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Failed login with invalid or missing credentials", "User Login Functionality"</td>
-<td></td>
-<td>10</td>
-<td>runner.JpetRunner@45b4c3a9</td></tr>
-<tr>
-<td title='runner.JpetRunner.runScenario()'><b>runScenario</b><br>Test class: runner.JpetRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login with valid credentials", "User Login Functionality"</td>
-<td></td>
-<td>12</td>
-<td>runner.JpetRunner@45b4c3a9</td></tr>
-<tr>
-<td title='runner.JpetRunner.runScenario()'><b>runScenario</b><br>Test class: runner.JpetRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Succesful user Logout", "User Login Functionality"</td>
-<td></td>
-<td>10</td>
+<td>13</td>
 <td>runner.JpetRunner@45b4c3a9</td></tr>
 </table><p>
 </body>
