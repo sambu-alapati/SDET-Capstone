@@ -30,7 +30,7 @@ Feature: User Registration
  
     Examples:
       | userid      | password | confirmpassword | firstname | lastname | email             | phone      | address1   | address2 | city      | state     | zip    | country | language | category |
-      | jpetuser123 | Test@123 | Test@123        | Naga      | Sai      | nagasai@gmail.com | 9876543210 | Whitefield | ITPL     | Bangalore | Karnataka | 560066 | India   | english  | FISH     |
+      | jpetusers12 | Test@123 | Test@123        | Naga      | Sai      | nagasai@gmail.com | 9876543210 | Whitefield | ITPL     | Bangalore | Karnataka | 560066 | India   | english  | FISH     |
  
   Scenario: Verify mandatory field error messages
  
