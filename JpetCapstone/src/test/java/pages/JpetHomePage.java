@@ -1,15 +1,13 @@
 package pages;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class JpetHomePage {
 	
@@ -17,6 +15,7 @@ public class JpetHomePage {
 	
 	public JpetHomePage(WebDriver driver) {
 		this.driver=driver;
+		PageFactory.initElements(driver, this);
 	}
 	
 	//search bar and search button 
@@ -51,7 +50,7 @@ public class JpetHomePage {
 	By reptilenavelement=By.linkText("Reptiles");
 	By dognavelement=By.linkText("Dogs");
 	By cartnavelement=By.xpath("//a[@href='/cart/viewCart']");
-	By myordersnavelement=By.linkText("My Orders");
+	By myordersnavelement=By.partialLinkText("My Orders");
 	
 	
 	
@@ -167,6 +166,114 @@ public class JpetHomePage {
 	public void myordersnavelement() {
 		driver.findElement(myordersnavelement).click();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@FindBy(name = "keyword")
+    private WebElement searchBox;
+ 
+    @FindBy(id = "jpetstore-search-btn")
+    private WebElement searchButton;
+ 
+    @FindBy(xpath = "//button[contains(@class,'dropdown-toggle')]")
+    private WebElement themeDropdown;
+ 
+    @FindBy(xpath = "//a[contains(text(),'Light')]")
+    private WebElement lightTheme;
+ 
+    @FindBy(xpath = "//a[contains(text(),'Dark')]")
+    private WebElement darkTheme;
+ 
+    @FindBy(xpath = "//a[contains(text(),'Auto')]")
+    private WebElement autoTheme;
+ 
+    @FindBy(xpath = "//a[contains(@href,'cart')]")
+    private WebElement cartIcon;
+ 
+//    public void selectCategory(String category) {
+//
+//        driver.findElement(
+//                By.linkText(category))
+//                .click();
+//    }
+    public void selectCategory(String category) {
+ 
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+ 
+        driver.findElement(
+                By.linkText(category))
+                .click();
+    }
+ 
+    public void searchProduct(String product) {
+ 
+        searchBox.clear();
+        searchBox.sendKeys(product);
+        searchButton.click();
+    }
+ 
+    public void selectTheme(String theme) {
+ 
+        themeDropdown.click();
+ 
+        switch (theme.toLowerCase()) {
+ 
+        case "light":
+            lightTheme.click();
+            break;
+ 
+        case "dark":
+            darkTheme.click();
+            break;
+ 
+        case "auto":
+            autoTheme.click();
+            break;
+ 
+        default:
+            throw new IllegalArgumentException(
+                    "Invalid Theme : " + theme);
+        }
+    }
+ 
+    public void openCart() {
+ 
+        cartIcon.click();
+    }
+	
+	
 	
 
 }

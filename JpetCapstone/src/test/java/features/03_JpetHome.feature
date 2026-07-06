@@ -3,7 +3,7 @@ Feature: Home Page Functionalities
 
 Background:
    Given the user is on the login page
-   When the user is logged in with valid username "jpetuser123" and valid password "Test@123"
+   When the user is logged in with valid username "jpetuser123" and valid password "Test@1234"
    And clicks the login button
  
  @click
