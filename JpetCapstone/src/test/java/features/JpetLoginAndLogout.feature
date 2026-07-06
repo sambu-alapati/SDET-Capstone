@@ -22,7 +22,7 @@ Feature: User Login Functionality
     Examples:
       
 | username            | password       | error_message                                |
-| user                | user@123       | Invalid username or password. Signon failed. |
+| user                | user123       | Invalid username or password. Signon failed. |
 | Sambu9              |                | Enter password                               |
 |                     | Sambu@123      | Enter username                               |
 

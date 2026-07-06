@@ -28,6 +28,15 @@ public class JpetStepDef {
     
     
     
+    
+    
+                                  // JPETREGISTER FEATURE //
+                              //-----------------------------------// 
+    
+    
+    
+    
+    
     //JpetRegister feature for scenario Register new user with valid details
     
     @Given("User is on JPetStore Registration page")
@@ -219,7 +228,8 @@ public class JpetStepDef {
     
     
     
-    
+                               // JPETLOGINANDLOGOUT FEATURE //
+                            //-----------------------------------// 
     
     
     
@@ -233,7 +243,6 @@ public class JpetStepDef {
 public void the_user_is_on_the_login_page() {
     driver=Hooks.driver;
 	jlp=new JpetLoginPage(driver);
-	jhp=new JpetHomePage(driver);
 	
 	driver.get("https://jpetstore.aspectran.com/");
 	jlp.SignInlink();
@@ -242,7 +251,14 @@ public void the_user_is_on_the_login_page() {
 @When("User enters username {string} password {string}")
 public void user_enters_username_password(String username, String password) {
     jlp.username(username);
-    jlp.password(password);
+    if(utils.CheckingValidPassword.isValidpassword(password)) {
+    	System.out.println("[INFO] Password matches rule specifications. Interacting with POM.");
+    	 jlp.password(password);
+    }else {
+    	  System.out.println("[WARN] Password failed structural validity profile checks.");
+    	  jlp.password(password);
+    }
+   
 }
 
 @When("clicks the login button")
@@ -289,7 +305,13 @@ public void user_should_be_logged_in_and_see_greeting_for_user(String username) 
 @When("the user enters {string} and {string}")
 public void the_user_enters_and(String username, String password) {
 	 jlp.username(username);
-	 jlp.password(password);
+	 if(utils.CheckingValidPassword.isValidpassword(password)) {
+	    	System.out.println("[INFO] Password matches rule specifications. Interacting with POM.");
+	    	 jlp.password(password);
+	    }else {
+	    	  System.out.println("[WARN] Password failed structural validity profile checks.");
+	    	  jlp.password(password);
+	    }
     
 }
 
@@ -340,7 +362,8 @@ public void user_should_successfully_able_to_logout() {
 
 
 
-
+                              // JPETHOME FEATURE //
+                            //----------------------//
 
 
 
@@ -349,6 +372,8 @@ public void user_should_successfully_able_to_logout() {
 
 @When("User enter {string} bird in searchbar")
 public void user_enter_bird_in_searchbar(String text) {
+	 driver = Hooks.driver;
+     jhp = new JpetHomePage(driver);
     jhp.searchbar(text);
 }
 
@@ -357,8 +382,8 @@ public void Clicks_the_search_button() {
 	jhp.searchBtn();
 }
 
-@Then("User Should able to see data releated to it")
-public void user_should_able_to_see_data_releated_to_it() {
+@Then("User Should able to see data related to it")
+public void User_should_able_to_see_data_releated_to_it() {
 	
 	 String pageText = driver.findElement(By.tagName("body")).getText();
 	    
@@ -374,11 +399,132 @@ public void user_should_able_to_see_data_releated_to_it() {
 
 
 
+//jpethome feature for scenario search bar function using enter keys 
+
+@And("Presses the Enter key on the keyboard")
+public void Presses_the_Enter_key_on_the_keyboard() {
+	jhp.searchbarusingkeys();
+}
+
+
+
+
+
+
+
+
+
+
+//jpethome feature for scenario Navbar elements navigation
+
+
+@When("user clicks the Bird navbar element and clicks return to main menu")
+public void user_clicks_the_bird_navbar_element_and_clicks_return_to_main_menu() {
+	driver = Hooks.driver;
+    jhp = new JpetHomePage(driver);
+    jhp.birdnavelement();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks the Cat navbar element and clicks return to main menu")
+public void user_clicks_the_cat_navbar_element_and_clicks_return_to_main_menu() {
+	jhp.catnavelement();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks the Dog navbar element and clicks return to main menu")
+public void user_clicks_the_dog_navbar_element_and_clicks_return_to_main_menu() {
+	jhp.dognavelement();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks the Reptile navbar element and clicks return to main menu")
+public void user_clicks_the_reptile_navbar_element_and_clicks_return_to_main_menu() {
+	jhp.reptilenavelement();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks the Fish navbar element and clicks return to main menu")
+public void user_clicks_the_fish_navbar_element_and_clicks_return_to_main_menu() {
+	jhp.fishnavelement();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks the Cart navbar element and clicks return to main menu")
+public void user_clicks_the_cart_navbar_element_and_clicks_return_to_main_menu() {
+	jhp.cartnavelement();
+    jhp.returntomainmenu();
+}
+
+@When("user clicks the My Orders navbar element")
+public void user_clicks_the_my_orders_navbar_element() {
+	jhp.myordersnavelement();;
+}
+
+
+
+
+
+
+
+
+
+
+
+//JpetHome feature for scenario imageNavigation
+
+
+@When("user clicks on the Bird image and clicks return to main menu")
+public void user_clicks_on_the_bird_image_and_clicks_return_to_main_menu() {
+	jhp=new JpetHomePage(driver);
+  jhp.birdimage();
+  jhp.returntomainmenu();
+}
+
+@When("user clicks on the Fish image and clicks return to main menu")
+public void user_clicks_on_the_fish_image_and_clicks_return_to_main_menu() {
+  jhp.fishimage();
+  jhp.returntomainmenu();
+}
+
+@When("user clicks on the Dog image and clicks return to main menu")
+public void user_clicks_on_the_dog_image_and_clicks_return_to_main_menu() {
+  jhp.dogimage();
+  jhp.returntomainmenu();
+}
+
+@When("user clicks on the Reptile image and clicks return to main menu")
+public void user_clicks_on_the_reptile_image_and_clicks_return_to_main_menu() {
+  jhp.reptileimage();
+  jhp.returntomainmenu();
+}
+
+@When("user clicks on the Cat image and clicks return to main menu")
+public void user_clicks_on_the_cat_image_and_clicks_return_to_main_menu() {
+  jhp.catimage();
+  jhp.returntomainmenu();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //JpetHome feature for Account management scenario 
 
 @When("user clicks on the account icon and goes to my Account")
 public void user_clicks_on_the_account_icon_and_goes_to_my_account() {
+	jhp=new JpetHomePage(driver);
     jhp.accountIcon();
     jhp.myAccount();
 }
@@ -407,8 +553,7 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     
     // Verify it matches "Your account has been updated." 
     Assert.assertEquals(actualText, verificationtext);
-	
-   
+	 
 }
 
 
@@ -416,39 +561,6 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 
 
-
-
-
-
-@When("user clicks on the Bird image and clicks return to main menu")
-public void user_clicks_on_the_bird_image_and_clicks_return_to_main_menu() {
-    jhp.birdimage();
-    jhp.returntomainmenu();
-}
-
-@When("user clicks on the Fish image and clicks return to main menu")
-public void user_clicks_on_the_fish_image_and_clicks_return_to_main_menu() {
-    jhp.fishimage();
-    jhp.returntomainmenu();
-}
-
-@When("user clicks on the Dog image and clicks return to main menu")
-public void user_clicks_on_the_dog_image_and_clicks_return_to_main_menu() {
-    jhp.dogimage();
-    jhp.returntomainmenu();
-}
-
-@When("user clicks on the Reptile image and clicks return to main menu")
-public void user_clicks_on_the_reptile_image_and_clicks_return_to_main_menu() {
-    jhp.reptileimage();
-    jhp.returntomainmenu();
-}
-
-@When("user clicks on the Cat image and clicks return to main menu")
-public void user_clicks_on_the_cat_image_and_clicks_return_to_main_menu() {
-    jhp.catimage();
-    jhp.returntomainmenu();
-}
 
 
 

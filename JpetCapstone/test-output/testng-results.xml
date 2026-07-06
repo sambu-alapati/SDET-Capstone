@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-02T17:53:07 IST" name="Default suite" finished-at="2026-07-02T17:54:07 IST" duration-ms="60104">
+  <suite started-at="2026-07-05T14:37:38 IST" name="Default suite" finished-at="2026-07-05T14:38:38 IST" duration-ms="60215">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-07-02T17:53:07 IST" name="Default test" finished-at="2026-07-02T17:54:07 IST" duration-ms="60104">
+    <test started-at="2026-07-05T14:37:38 IST" name="Default test" finished-at="2026-07-05T14:38:38 IST" duration-ms="60215">
       <class name="runner.JpetRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-02T17:53:07 IST" name="setUpClass" finished-at="2026-07-02T17:53:08 IST" duration-ms="697" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-05T14:37:38 IST" name="setUpClass" finished-at="2026-07-05T14:37:40 IST" duration-ms="1560" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4c361f63]]>
+                <![CDATA[org.testng.TestRunner@3b7eac14]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-02T17:53:08 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-02T17:53:18 IST" duration-ms="10625" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-05T14:37:40 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-05T14:37:51 IST" duration-ms="11480" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-02T17:53:18 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-02T17:53:28 IST" duration-ms="10120" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-05T14:37:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-05T14:38:03 IST" duration-ms="11526" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-02T17:53:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-02T17:53:43 IST" duration-ms="14494" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-05T14:38:03 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-05T14:38:15 IST" duration-ms="12332" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -72,7 +72,7 @@
 at junit.framework.Assert.fail(Assert.java:55)
 at junit.framework.Assert.assertTrue(Assert.java:22)
 at junit.framework.Assert.assertTrue(Assert.java:31)
-at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:306)
+at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:328)
 at ✽.they should see an error message "Enter password"(file:///C:/Users/SA20696539/git/SDET-Capstone/JpetCapstone/src/test/java/features/JpetLoginAndLogout.feature:19)
 ]]>
             </full-stacktrace>
@@ -80,7 +80,7 @@ at ✽.they should see an error message "Enter password"(file:///C:/Users/SA2069
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-02T17:53:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-02T17:53:56 IST" duration-ms="13260" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-05T14:38:15 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-05T14:38:27 IST" duration-ms="12345" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -99,7 +99,7 @@ at ✽.they should see an error message "Enter password"(file:///C:/Users/SA2069
 at junit.framework.Assert.fail(Assert.java:55)
 at junit.framework.Assert.assertTrue(Assert.java:22)
 at junit.framework.Assert.assertTrue(Assert.java:31)
-at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:306)
+at stepDef.JpetStepDef.they_should_see_an_error_message(JpetStepDef.java:328)
 at ✽.they should see an error message "Enter username"(file:///C:/Users/SA20696539/git/SDET-Capstone/JpetCapstone/src/test/java/features/JpetLoginAndLogout.feature:19)
 ]]>
             </full-stacktrace>
@@ -107,7 +107,7 @@ at ✽.they should see an error message "Enter username"(file:///C:/Users/SA2069
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-02T17:53:56 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-02T17:54:07 IST" duration-ms="10823" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-05T14:38:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-05T14:38:38 IST" duration-ms="10800" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -123,7 +123,7 @@ at ✽.they should see an error message "Enter username"(file:///C:/Users/SA2069
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-02T17:54:07 IST" name="tearDownClass" finished-at="2026-07-02T17:54:07 IST" duration-ms="31" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.JpetRunner@45b4c3a9]" started-at="2026-07-05T14:38:38 IST" name="tearDownClass" finished-at="2026-07-05T14:38:38 IST" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

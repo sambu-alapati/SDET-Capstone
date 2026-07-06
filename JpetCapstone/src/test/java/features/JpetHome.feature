@@ -6,11 +6,28 @@ Background:
    When the user is logged in with valid username "jpetuser123" and valid password "Test@123"
    And clicks the login button
  
-@searchbar
-Scenario: User Searchbar Functionality 
-When User enter "Amazon Parrot" bird in searchbar
-And Clicks the search button 
-Then User Should able to see data releated to it
+ @click
+  Scenario: User Searchbar Functionality 
+    When User enter "Amazon Parrot" bird in searchbar
+    And Clicks the search button 
+    Then User Should able to see data related to it
+    
+ @enterkey   
+ Scenario: User Searchbar Functionality using Enter Key
+    When User enter "Amazon Parrot" bird in searchbar
+    And Presses the Enter key on the keyboard
+    Then User Should able to see data related to it
+
+
+@navbarelementsNavigation 
+Scenario: Navbar Elements Navigation 
+When user clicks the Bird navbar element and clicks return to main menu 
+When user clicks the Cat navbar element and clicks return to main menu
+When user clicks the Dog navbar element and clicks return to main menu
+When user clicks the Reptile navbar element and clicks return to main menu 
+When user clicks the Fish navbar element and clicks return to main menu 
+When user clicks the Cart navbar element and clicks return to main menu 
+When user clicks the My Orders navbar element 
 
 
 

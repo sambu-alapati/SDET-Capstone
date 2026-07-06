@@ -6,7 +6,9 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		features = "src/test/java/features/JpetLoginAndLogout.feature",
 		glue={"stepDef","hooks"}, monochrome=true,
-		plugin = {"pretty", "html:target/cucumber-reports/JpetCapstone.html"}
+		plugin = {"pretty", "html:target/cucumber-reports/JpetCapstone.html",
+				            "json:target/cucumber-reports/Cucumber.json",
+			                "junit:target/cucumber-reports/Cucumber.xml"}
 		)
 public class JpetRunner extends AbstractTestNGCucumberTests {
 
